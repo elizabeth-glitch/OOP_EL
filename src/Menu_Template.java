@@ -1,3 +1,4 @@
+package Examples;
 class Menu_Template {
     public static void run() {
 
@@ -6,8 +7,8 @@ class Menu_Template {
 
             System.out.println("Press 1 for rock\nPress 2 to for country\nPress 3 for jazzy grooves\nPress 4 to exit.");
 
-            int choice = Library.input.nextInt();
-            Library.input.nextLine();
+            int choice = Examples.Library.input.nextInt();
+            Examples.Library.input.nextLine();
 
             if (choice == 1) {
                 System.out.println("Let's rock!");

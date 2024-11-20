@@ -2,7 +2,7 @@ package As1_Crops;
 
 public class As1_Crop {
     private String name;
-    private double yield;
+    private double yield; //bu/acres
     private String units;
     private double price;
     private int acres;
@@ -19,8 +19,7 @@ public class As1_Crop {
         return name + ", yield: " + yield + ", units: " + units + ", price: " + price + ", acres: " + acres;
     }
 
-    public void Setter(){
-
+    public void setAcres(int acres) {
+        this.acres = acres;
     }
-
 }
