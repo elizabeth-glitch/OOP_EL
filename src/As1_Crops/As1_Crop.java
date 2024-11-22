@@ -19,6 +19,8 @@ public class As1_Crop {
         return name + ", yield: " + yield + ", units: " + units + ", price: " + price + ", acres: " + acres;
     }
 
+
+
     public void setAcres(int acres) {
         this.acres = acres;
     }

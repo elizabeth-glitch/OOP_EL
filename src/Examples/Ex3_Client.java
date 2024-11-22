@@ -18,6 +18,15 @@ public class Ex3_Client {
 
     }//constructor
 
+    public Ex3_Client( String n, String a, int l, boolean d, double f ){
+        name = n;
+        address = a;
+        lawnSize = l;
+        hasDog = d;
+        outstandingFees = 0;
+
+    }//constructor
+
     public String toString(){ //unformatted
         return name + "   " + address + "   " + lawnSize + "   " + hasDog + "   " + outstandingFees;
     }
@@ -61,5 +70,21 @@ public class Ex3_Client {
         if(outstandingFees > 500 && hasDog){
             hasDog = false;
         }
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getLawnSize() {
+        return lawnSize;
+    }
+
+    public boolean isHasDog() {
+        return hasDog;
+    }
+
+    public double getOutstandingFees() {
+        return outstandingFees;
     }
 }

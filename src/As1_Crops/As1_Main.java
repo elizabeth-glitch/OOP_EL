@@ -1,7 +1,5 @@
 package As1_Crops;
 
-import Examples.Ex3_Client;
-
 import java.util.ArrayList;
 
 public class As1_Main {
@@ -20,9 +18,43 @@ public class As1_Main {
         allCrops.get(3).setAcres(  150 );
         allCrops.get(4).setAcres(  250  );
 
-        for (int i = 0; i < allCrops.size(); i++) {
-            System.out.println( allCrops.get(i) );
-        }
+        while(true){
+            System.out.println("1. Print farm summary");
+            System.out.println("2. Search and harvest a crop");
+            System.out.println("3. Get total revenue");
+            System.out.println("4. Plant a crop");
+            System.out.println("5. Exit");
+
+            int choice = Library.input.nextInt();
+            Library.input.nextLine();
+            if(choice == 1){
+                for (int i = 0; i < allCrops.size(); i++) {
+                    printMe(allCrops.get(i));
+                }
+            }//choice 1
+            else if(choice == 2){
+
+            }
+            else if(choice == 3){
+
+            }
+            else if(choice == 4){
+
+            }
+            else if(choice == 5){
+                break;
+            }
+
+        }//while
+
+
+
+    }//run
+
+    public static void printMe(){
+        return "Crop: " + name + ", yield: " + yield +", units: " + units + ", price: " + price + ", acres: " + acres;
+
+
     }
 
-}
+}//class
