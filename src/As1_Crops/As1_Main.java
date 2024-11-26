@@ -42,7 +42,7 @@ public class As1_Main {
                 String answer = input.nextLine();
                 As1_Crop crop = searchByName(allCrops, answer);
 
-                if(crop == -1){
+                if(crop == null){
                     System.out.println("Error crop not found.");
                 }else{
                     crop.printMe();
@@ -66,9 +66,10 @@ public class As1_Main {
                 String cropName = input.nextLine();
                 As1_Crop crop = searchByName(allCrops, cropName);
 
-                if(crop != -1){
+                if(crop != null){
                     System.out.println("Enter the number of acres to plant: ");
                     int plantAcres = input.nextInt();
+                    input.nextLine();
                     crop.addAcres(plantAcres);
                     System.out.println("Updated acres for " + cropName + ": " + crop.getAcres());
                 } else{
@@ -84,6 +85,7 @@ public class As1_Main {
                     As1_Crop newCrop = new As1_Crop(cropName, plantYield, plantUnits, plantPrice);
                     System.out.println("Enter the number of acres to plant: ");
                     int plantAcres = input.nextInt();
+                    input.nextLine();
                     newCrop.setAcres(plantAcres);
                     allCrops.add(newCrop);
                     System.out.println("New crop " + cropName + " added with " + plantAcres + " acres.");
@@ -105,7 +107,7 @@ public class As1_Main {
                 return crop; // Return the crop if found
             }
         }
-        return -1; 
+        return null; 
     }
 
 
