@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class As1_Main {
     public static void run(){
+        Scanner input = new Scanner(System.in);
         ArrayList<As1_Crop> allCrops = new ArrayList<>();
         allCrops.add(  new As1_Crop( "Spring Wheat", 58.1 , "bushels", 6.30)  );
         allCrops.add(  new As1_Crop( "Sugar Beets", 34.9 , "tons", 781.0)  );
@@ -25,8 +26,8 @@ public class As1_Main {
             System.out.println("4. Plant a crop");
             System.out.println("5. Exit");
 
-            int choice = Library.input.nextInt();
-            Library.input.nextLine();
+            int choice = input.nextInt();
+            input.nextLine();
             if(choice == 1){
                 for (int i = 0; i < allCrops.size(); i++) {
                     printMe(allCrops.get(i));
@@ -51,8 +52,8 @@ public class As1_Main {
 
     }//run
 
-    public static void printMe(){
-        return "Crop: " + name + ", yield: " + yield +", units: " + units + ", price: " + price + ", acres: " + acres;
+    public static void printMe(As1_Crop crop){
+        System.out.println("Crop: " + crop.getName() + ", yield: " + crop.getYield() +", units: " + crop.getUnits() + ", price: " + crop.getPrice() + ", acres: " + crop.getAcres());
 
 
     }
