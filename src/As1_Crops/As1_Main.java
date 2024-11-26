@@ -53,8 +53,5 @@ public class As1_Main {
 
     }//run
 
-    public static void printMe(As1_Crop crop){
-        System.out.println( crop.toString() );
-    }
 
 }//class
