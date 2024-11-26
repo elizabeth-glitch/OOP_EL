@@ -35,7 +35,23 @@ public class As1_Main {
                 }
             }//choice 1
             else if(choice == 2){
+                System.out.println("Enter the name of the crop: ");
+                String answer = input.nextLine();
+                As1_Crop crop = searchByName(allCrops, answer);
 
+                if(crop == -1){
+                    System.out.println("Error crop not found.");
+                }else{
+                    crop.printMe();
+                    System.out.println("Do you want to harvest this crop? (yes or no)");
+                    String answer2 = input.nextLine().toLowerCase();
+
+                    if(answer2.equals("yes")){
+                        crop.harvest();
+                    }else{
+                        System.out.println("no harvest");
+                    }
+                }
             }
             else if(choice == 3){
 
@@ -52,6 +68,15 @@ public class As1_Main {
 
 
     }//run
+
+    private static As1_Crop searchByName(ArrayList<As1_Crop> crops, String name) {
+        for (As1_Crop crop : crops) {
+            if (crop.getName().equalsIgnoreCase(name)) {
+                return crop; // Return the crop if found
+            }
+        }
+        return -1; 
+    }
 
 
 }//class
