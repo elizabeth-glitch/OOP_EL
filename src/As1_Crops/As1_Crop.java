@@ -18,8 +18,25 @@ public class As1_Crop {
     public String toString(){
         return name + ", yield: " + yield + ", units: " + units + ", price: " + price + ", acres: " + acres;
     }
+    public String getName() {
+        return name;
+    }
 
+    public double getYield() {
+        return yield;
+    }
 
+    public String getUnits() {
+        return units;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getAcres() {
+        return acres;
+    }
 
     public void setAcres(int acres) {
         this.acres = acres;
