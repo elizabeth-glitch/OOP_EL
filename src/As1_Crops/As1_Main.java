@@ -29,8 +29,9 @@ public class As1_Main {
             int choice = input.nextInt();
             input.nextLine();
             if(choice == 1){
-                for (int i = 0; i < allCrops.size(); i++) {
-                    printMe(allCrops.get(i));
+                System.out.println("Farm Summary: ");
+                for (As1_Crop crop: allCrops) {
+                    crop.printMe();
                 }
             }//choice 1
             else if(choice == 2){
@@ -53,9 +54,7 @@ public class As1_Main {
     }//run
 
     public static void printMe(As1_Crop crop){
-        System.out.println("Crop: " + crop.getName() + ", yield: " + crop.getYield() +", units: " + crop.getUnits() + ", price: " + crop.getPrice() + ", acres: " + crop.getAcres());
-
-
+        System.out.println( crop.toString() );
     }
 
 }//class
