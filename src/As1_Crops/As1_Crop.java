@@ -15,6 +15,14 @@ public class As1_Crop {
         acres = 0;
     }
 
+    public void printMe() {
+    System.out.println(
+        "Name: " + name + "\n" +
+        "Yield: " + yield + " " + units + "\n" +
+        "Price: $" + price + "\n" +
+        "Acres: " + acres);
+    }
+
     public String toString(){
         return name + ", yield: " + yield + ", units: " + units + ", price: " + price + ", acres: " + acres;
     }
