@@ -57,4 +57,8 @@ public class As1_Crop {
     public void setAcres(int acres) {
         this.acres = acres;
     }
+
+    public void addAcres(int acresToAdd){
+        this.acres += acresToAdd;
+    }
 }
