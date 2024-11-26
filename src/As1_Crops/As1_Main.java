@@ -1,10 +1,10 @@
 package As1_Crops;
-
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class As1_Main {
     public static void run(){
-        Scanner input = new Scanner(System.in);
+        
         ArrayList<As1_Crop> allCrops = new ArrayList<>();
         allCrops.add(  new As1_Crop( "Spring Wheat", 58.1 , "bushels", 6.30)  );
         allCrops.add(  new As1_Crop( "Sugar Beets", 34.9 , "tons", 781.0)  );
@@ -18,6 +18,9 @@ public class As1_Main {
         allCrops.get(2).setAcres(  50  );
         allCrops.get(3).setAcres(  150 );
         allCrops.get(4).setAcres(  250  );
+        
+        double totalRevenue = 0;
+        Scanner input = new Scanner(System.in);
 
         while(true){
             System.out.println("1. Print farm summary");
@@ -47,17 +50,44 @@ public class As1_Main {
                     String answer2 = input.nextLine().toLowerCase();
 
                     if(answer2.equals("yes")){
-                        crop.harvest();
+                        double harvestValue = crop.harvest();
+                        totalRevenue += harvestValue;
+                        System.out.println("Revenue added to total: $" + harvestValue);
                     }else{
                         System.out.println("no harvest");
                     }
                 }
             }
             else if(choice == 3){
-
+                System.out.println("Total revenue from all harvested crops: $" + totalRevenue);
             }
             else if(choice == 4){
+                System.out.println("Enter the name of the crop to plant: ");
+                String cropName = input.nextLine();
+                As1_Crop crop = searchByName(allCrops, cropName);
 
+                if(crop != -1){
+                    System.out.println("Enter the number of acres to plant: ");
+                    int plantAcres = input.nextInt();
+                    crop.addAcres(plantAcres);
+                    System.out.println("Updated acres for " + cropName + ": " + crop.getAcres());
+                } else{
+                    System.out.println("Enter the yield for the crop: ");
+                    double plantYield = input.nextDouble();
+                    input.nextLine();
+                    System.out.println("Enter the units (bushels, tons, etc.): ");
+                    String plantUnits = input.nextLine();
+                    System.out.print("Enter the price per unit: ");
+                    double plantPrice = input.nextDouble();
+                    input.nextLine();
+
+                    As1_Crop newCrop = new As1_Crop(cropName, plantYield, plantUnits, plantPrice);
+                    System.out.println("Enter the number of acres to plant: ");
+                    int plantAcres = input.nextInt();
+                    newCrop.setAcres(plantAcres);
+                    allCrops.add(newCrop);
+                    System.out.println("New crop " + cropName + " added with " + plantAcres + " acres.");
+                }
             }
             else if(choice == 5){
                 break;
