@@ -23,6 +23,14 @@ public class As1_Crop {
         "Acres: " + acres);
     }
 
+    public double harvest(){
+        double value = price * yield * acres;
+        value = Math.round(value*100) / 100.0;
+        System.out.println("Harvest value: $" + value);
+        acres = 0;
+        return value;
+    }
+
     public String toString(){
         return name + ", yield: " + yield + ", units: " + units + ", price: " + price + ", acres: " + acres;
     }
