@@ -19,4 +19,8 @@ public class As2_Team {
         years = y;
     }
 
+    public void printMe(){
+        System.out.println("Name: " + name + " location: " + location + " conference: " + conference + " division: " + division + " Year last Stanley cup was won: " + cupWon + " Stanley cups won: " + cupNum + " joined NHL: " + years);
+    }
+
 }

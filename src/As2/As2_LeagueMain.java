@@ -1,9 +1,7 @@
 package As2;
 import Examples.Ex3_Client;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +12,38 @@ public class As2_LeagueMain {
         loadFile("data/TeamsData.csv", allTeams);
         allTeams.add(  new As2_Team( "Los Angeles Kings", "Los Angeles", "Western", "Pacific", 2014, 2, 1967 )  );
 
+        System.out.println("Menu: ");
+        System.out.println("1. Print list of teams");
+        System.out.println("2. Find averages");
+        System.out.println("3. View Division");
+        System.out.println("4. Sort by ? ");
+        System.out.println("5. Update Stats");
+        System.out.println("6. Exit and save");
+
+        int answer = input.nextInt();
+        while(true){
+            if(answer == 1){
+                for (int i = 0; i < allTeams.size(); i++) {
+                    allTeams.printMe();
+                }
+            }//1
+            if(answer == 2){
+
+            }//2
+            if(answer == 3){
+
+            }
+            if(answer == 4){
+
+            }
+            if(answer == 5){
+
+            }
+            if(answer == 6){
+                //saveFile("data/TeamsData.csv", allTeams);
+                break;
+            }
+        }//while
     }//run
 
     public static void loadFile(String filename, ArrayList<As2_Team> list ) {
@@ -36,5 +66,7 @@ public class As2_LeagueMain {
             System.out.println(e);
         }
     }//end loadFile
+
+
 
 }//class
