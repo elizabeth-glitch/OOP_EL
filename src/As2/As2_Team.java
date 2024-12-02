@@ -19,8 +19,35 @@ public class As2_Team {
         years = y;
     }
 
-    public void printMe(){
+    public void printMe() {
         System.out.println("Name: " + name + " location: " + location + " conference: " + conference + " division: " + division + " Year last Stanley cup was won: " + cupWon + " Stanley cups won: " + cupNum + " joined NHL: " + years);
     }
 
+    public String getCon(){
+        return conference;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public int getCupWon() {
+        return cupWon;
+    }
+
+    public int getCupNum() {
+        return cupNum;
+    }
+
+    public int getYears() {
+        return years;
+    }
 }

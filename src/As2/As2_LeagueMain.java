@@ -1,4 +1,5 @@
 package As2;
+
 import Examples.Ex3_Client;
 
 import java.io.*;
@@ -12,27 +13,39 @@ public class As2_LeagueMain {
         loadFile("data/TeamsData.csv", allTeams);
         allTeams.add(  new As2_Team( "Los Angeles Kings", "Los Angeles", "Western", "Pacific", 2014, 2, 1967 )  );
 
-        System.out.println("Menu: ");
-        System.out.println("1. Print list of teams");
-        System.out.println("2. Find averages");
-        System.out.println("3. View Division");
-        System.out.println("4. Sort by ? ");
-        System.out.println("5. Update Stats");
-        System.out.println("6. Exit and save");
 
-        int answer = input.nextInt();
         while(true){
+            System.out.println("Menu: ");
+            System.out.println("1. Print list of teams");
+            System.out.println("2. Find averages");
+            System.out.println("3. View division");
+            System.out.println("4. Sort by ? ");
+            System.out.println("5. Update Stats");
+            System.out.println("6. Exit and save");
+
+            int answer = input.nextInt();
             if(answer == 1){
-                for (int i = 0; i < allTeams.size(); i++) {
-                    allTeams.printMe();
+                System.out.println("NHL Teams");
+                for (int i = 0; i<allTeams.size(); i++) {
+                    allTeams.get(i).printMe();
                 }
             }//1
             if(answer == 2){
 
             }//2
-            if(answer == 3){
+            if(answer == 3) { // view division
+                System.out.println("What division do you want to view?");
+                input.nextLine();
+                String answer1 = input.nextLine();
+                int result = searchByDiv(allTeams, answer1);
+                for (int i = 0; i < allTeams.size(); i++) {
+                    if (result != -1) {
+                        System.out.println("Name: " + allTeams.get(result).getName() + " Conference: " + allTeams.get(result).getCon());
+                    }
+                    result = searchByDiv(allTeams, answer1);
+                }
 
-            }
+            }//3
             if(answer == 4){
 
             }
@@ -66,6 +79,15 @@ public class As2_LeagueMain {
             System.out.println(e);
         }
     }//end loadFile
+
+    public static int searchByDiv(ArrayList<As2_Team> list, String searchTerm   ){
+        for (int i = 0; i < list.size(); i++) {
+            if(searchTerm.equalsIgnoreCase(  list.get(i).getDivision()     )){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 
