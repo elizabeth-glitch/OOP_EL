@@ -37,12 +37,17 @@ public class As2_LeagueMain {
                 System.out.println("What division do you want to view?");
                 input.nextLine();
                 String answer1 = input.nextLine();
-                int result = searchByDiv(allTeams, answer1);
-                for (int i = 0; i < allTeams.size(); i++) {
-                    if (result != -1) {
-                        System.out.println("Name: " + allTeams.get(result).getName() + " Conference: " + allTeams.get(result).getCon());
+                
+                boolean found = false;
+                System.out.println("Teams in the division " + answer1 + ":");
+                for(As2_Team team : allTeams){
+                    if(  selectedDivision.equalsIgnoreCase( team.getDivision() )  ){
+                        System.out.println("Name: " + team.getName() + " Conference: " + team.getConference() );
+                        found = true;
                     }
-                    result = searchByDiv(allTeams, answer1);
+                }
+                if(!found){
+                    System.out.println("No teams found in the division");
                 }
 
             }//3
@@ -83,6 +88,7 @@ public class As2_LeagueMain {
     public static int searchByDiv(ArrayList<As2_Team> list, String searchTerm   ){
         for (int i = 0; i < list.size(); i++) {
             if(searchTerm.equalsIgnoreCase(  list.get(i).getDivision()     )){
+                
                 return i;
             }
         }
