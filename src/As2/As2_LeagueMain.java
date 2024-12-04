@@ -19,7 +19,7 @@ public class As2_LeagueMain {
             System.out.println("1. Print list of teams");
             System.out.println("2. Find highest");
             System.out.println("3. View division");
-            System.out.println("4. Sort by ? ");
+            System.out.println("4. Sort by Stanley Cup win ");
             System.out.println("5. Update Cup Status");
             System.out.println("6. Exit and save");
 
@@ -128,7 +128,7 @@ public class As2_LeagueMain {
                 }
             }
             if(answer == 6){
-                //saveFile("data/TeamsData.csv", allTeams);
+                saveFile("data/TeamsData.csv", allTeams);
                 break;
             }
         }//while
@@ -154,6 +154,34 @@ public class As2_LeagueMain {
             System.out.println(e);
         }
     }//end loadFile
+
+    public static void saveFile(String filename, ArrayList <As2_Team> tempList ) {
+        try {
+            PrintWriter file = new PrintWriter(new FileWriter(filename));
+
+            for (int i = 0; i < tempList.size(); i++) {
+//the next lines are customized for whatever data you are getting.
+                String toSave ="";
+                toSave = tempList.get(i).getName();  //assumes getter method are used for private variables
+                toSave +="," + tempList.get(i).getLocation();
+                toSave += "," + tempList.get(i).getConference();
+                toSave +="," + tempList.get(i).getDivision();
+                toSave +="," + tempList.get(i).getCupNum();
+                toSave +="," + tempList.get(i).getCupWon();
+                toSave +="," + tempList.get(i).getYears();
+
+//The above 6 lines could be replaced by a call to a carefully made toString() function
+
+                file.println(toSave);
+
+            }
+            file.close();
+        }
+        catch (IOException ex) {
+            System.out.println(ex.toString());
+        }
+
+    }//end saveFile
 
 
 

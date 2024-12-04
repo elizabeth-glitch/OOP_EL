@@ -1,5 +1,7 @@
 package As2;
 
+import java.util.ArrayList;
+
 public class As2_Team {
     private String name;
     private String location;
@@ -8,6 +10,11 @@ public class As2_Team {
     private int cupWon; //last year the stanley cup was won
     private int cupNum;
     private int years; //when the team joined the NHL, in their current city
+
+    private ArrayList<As2_Player> allPlayers = new ArrayList<>();
+    public void addPlayer( String n, int id, int g, int p, double s ){
+        allPlayers.add( new As2_Player( n, id, g, p, s ) );
+    }
 
     public As2_Team( String n, String l, String c, String d, int w, int num, int y ){
         name = n;
@@ -23,7 +30,7 @@ public class As2_Team {
         System.out.println("Name: " + name + " location: " + location + " conference: " + conference + " division: " + division + " Year last Stanley cup was won: " + cupWon + " Stanley cups won: " + cupNum + " joined NHL: " + years);
     }
 
-    public String getCon(){
+    public String getConference(){
         return conference;
     }
 
@@ -49,5 +56,13 @@ public class As2_Team {
 
     public int getYears() {
         return years;
+    }
+
+    public void setCupWon(int cupWon) {
+        this.cupWon = cupWon;
+    }
+
+    public void setCupNum(int cupNum) {
+        this.cupNum = cupNum;
     }
 }
