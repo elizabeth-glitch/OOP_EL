@@ -13,6 +13,8 @@ public class As2_LeagueMain {
         loadFile("data/TeamsData.csv", allTeams);
         allTeams.add(  new As2_Team( "Los Angeles Kings", "Los Angeles", "Western", "Pacific", 2014, 2, 1967 )  );
 
+        allTeams.allPlayers.addPlayer();
+
 
         while(true){
             System.out.println("Menu: ");
