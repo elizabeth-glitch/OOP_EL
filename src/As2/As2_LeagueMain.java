@@ -162,7 +162,7 @@ public class As2_LeagueMain {
                 boolean found = false;
                 for(As2_Team team: allTeams){
                     if(team.getName().equalsIgnoreCase(teamName)){
-                        team.printMyPlayers();
+                        team.printPlayers();
                         found = true;
                         break;
                     }
@@ -177,13 +177,13 @@ public class As2_LeagueMain {
                     System.out.println(team.getName() + ": " + team.getTotalPlayerStats() + " total goals");
                 }
             }
-            if(amswer == 9){
+            if(answer == 9){
                 System.out.println("Enter the name of the player to update");
                 input.nextLine();
                 String playerName = input.nextLine();
                 boolean found = false;
                 for(As2_Team team : allTeams){
-                    for(As2_Player player : team.players){
+                    for(As2_Player player : allPlayers){
                         if(player.getName().equalsIgnoreCase(playerName)){
                             player.updateStat();
                             found = true;

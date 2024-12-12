@@ -11,21 +11,21 @@ public class As2_Team {
     private int cupNum;
     private int years; //when the team joined the NHL, in their current city
 
-    private ArrayList<As2_Player> players;
+    private ArrayList<As2_Player> allPlayers;
     public void addPlayer( String n, int id, int g, int p, double s ){
         allPlayers.add( new As2_Player( n, id, g, p, s ) );
     }
     public void printPlayers(){
         System.out.println("Players on " + name + ":");
-        for(As2_Player player : players){
+        for(As2_Player player : allPlayers){
             player.printMe();
         }
     }
 
     public int getTotalPlayerStats(){
         int totalGoals = 0;
-        for(As2_Player player : players){
-            totalGoals += player.getGaolsScored();
+        for(As2_Player player : allPlayers){
+            totalGoals += player.getGoalsScored();
         }
         return totalGoals;
     }
@@ -38,7 +38,7 @@ public class As2_Team {
         cupWon = w;
         cupNum = num;
         years = y;
-        players = new ArrayList<>();
+        allPlayers = new ArrayList<>();
     }
 
     public void printMe() {
@@ -80,4 +80,5 @@ public class As2_Team {
     public void setCupNum(int cupNum) {
         this.cupNum = cupNum;
     }
+
 }
