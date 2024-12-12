@@ -158,7 +158,7 @@ public class As2_LeagueMain {
             if(answer == 7){
                 System.out.println("Enter the name of the team: ");
                 input.nextLine();
-                String teamN = input.nextLine();
+                String teamName = input.nextLine();
                 boolean found = false;
                 for(As2_Team team: allTeams){
                     if(team.getName().equalsIgnoreCase(teamName)){
@@ -183,7 +183,7 @@ public class As2_LeagueMain {
                 String playerName = input.nextLine();
                 boolean found = false;
                 for(As2_Team team : allTeams){
-                    for(As3_Player player : team.players){
+                    for(As2_Player player : team.players){
                         if(player.getName().equalsIgnoreCase(playerName)){
                             player.updateStat();
                             found = true;
