@@ -15,8 +15,30 @@ public class As2_Player {
         salary = s;
     }
 
+    public String toString(){
+        return "Name: " + name + ", Player ID: " + playerID + ", Goals scored: " + goalsScored + ", points: " + points + ", salary: " + salary;
+    }
+
     public void printMe(){
-        System.out.println("Player: " + name + " playerID: " + playerID + " goals: " + goalsScored + " points: " + points + " salary: " + salary);
+        System.out.println(toString());
+    }
+    
+    public void updateStat(){
+        System.out.println("Updating " + name + "'s stats");
+        goalsScored++;
+        System.out.println("Goals scored: " + goalsScored);
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getGoalsScored(){
+        return goalsScored;
+    }
+
+    public void setGoalsScored(int goalsScored){
+        this.goalsScored = goalsScored;
     }
 
 }
