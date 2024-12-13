@@ -22,6 +22,10 @@ public class As2_Team {
         }
     }
 
+    public void getPlayers(){
+        return players;
+    }
+
     public int getTotalPlayerStats(){
         int totalGoals = 0;
         for(As2_Player player : allPlayers){
