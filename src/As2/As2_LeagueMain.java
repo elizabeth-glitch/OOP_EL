@@ -183,7 +183,7 @@ public class As2_LeagueMain {
                 String playerName = input.nextLine();
                 boolean found = false;
                 for(As2_Team team : allTeams){
-                    for(As2_Player player : allPlayers){
+                    for(As2_Player player : team.getPlayers()){
                         if(player.getName().equalsIgnoreCase(playerName)){
                             player.updateStat();
                             found = true;
