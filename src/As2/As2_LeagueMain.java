@@ -50,7 +50,7 @@ public class As2_LeagueMain {
             int answer = input.nextInt();
             if(answer == 1){
                 System.out.println("NHL Teams");
-                for (int i = 0; i<allTeams.size(); i++) {
+                for (int i = 0; i<allTeams.size()-1; i++) {
                     allTeams.get(i).printMe();
                 }
             }//1
@@ -226,15 +226,15 @@ public class As2_LeagueMain {
         try {
             PrintWriter file = new PrintWriter(new FileWriter(filename));
 
-            for (int i = 0; i < tempList.size(); i++) {
+            for (int i = 0; i < tempList.size()-1; i++) {
 //the next lines are customized for whatever data you are getting.
                 String toSave ="";
                 toSave = tempList.get(i).getName();  //assumes getter method are used for private variables
                 toSave +="," + tempList.get(i).getLocation();
                 toSave += "," + tempList.get(i).getConference();
                 toSave +="," + tempList.get(i).getDivision();
-                toSave +="," + tempList.get(i).getCupNum();
                 toSave +="," + tempList.get(i).getCupWon();
+                toSave +="," + tempList.get(i).getCupNum();
                 toSave +="," + tempList.get(i).getYears();
 
 //The above 6 lines could be replaced by a call to a carefully made toString() function

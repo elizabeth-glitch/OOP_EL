@@ -22,8 +22,8 @@ public class As2_Team {
         }
     }
 
-    public void getPlayers(){
-        return players;
+    public ArrayList<As2_Player> getPlayers(){
+        return allPlayers;
     }
 
     public int getTotalPlayerStats(){
